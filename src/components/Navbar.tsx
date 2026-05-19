@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -11,7 +12,12 @@ const navLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
-export function Navbar() {
+type NavbarProps = {
+  theme: "light" | "dark";
+  onToggleTheme: () => void;
+};
+
+export function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
@@ -58,7 +64,8 @@ export function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle theme={theme} onToggle={onToggleTheme} />
             <Link to="/contact">
               <Button variant="hero" size="lg">
                 Get Started
