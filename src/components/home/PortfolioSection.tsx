@@ -59,7 +59,7 @@ export function PortfolioSection() {
               transition={{ delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="h-full p-6 lg:p-8 rounded-2xl bg-gradient-card border border-border/50 overflow-hidden card-hover">
+              <div className="h-full p-6 lg:p-8 rounded-2xl bg-gradient-card border border-border/50 overflow-hidden card-hover card-animated">
                 {/* Sample Badge */}
                 <div className="absolute top-4 right-4">
                   <span className="px-3 py-1 text-xs font-medium bg-primary/20 text-primary rounded-full">

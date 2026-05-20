@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -11,7 +12,12 @@ const navLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
-export function Navbar() {
+type NavbarProps = {
+  theme: "light" | "dark";
+  onToggleTheme: () => void;
+};
+
+export function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
@@ -58,7 +64,8 @@ export function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle theme={theme} onToggle={onToggleTheme} />
             <Link to="/contact">
               <Button variant="hero" size="lg">
                 Get Started
@@ -66,7 +73,9 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Controls */}
+          <div className="lg:hidden flex items-center gap-2">
+            <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
@@ -74,6 +83,7 @@ export function Navbar() {
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -87,6 +97,9 @@ export function Navbar() {
               className="lg:hidden overflow-hidden"
             >
               <div className="py-4 space-y-4">
+                <div className="pb-2">
+                  <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+                </div>
                 {navLinks.map((link, index) => (
                   <motion.div
                     key={link.name}

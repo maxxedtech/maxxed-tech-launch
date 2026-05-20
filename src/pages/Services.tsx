@@ -85,9 +85,14 @@ const services = [
   },
 ];
 
-const Services = () => {
+type PageProps = {
+  theme: "light" | "dark";
+  onToggleTheme: () => void;
+};
+
+const Services = ({ theme, onToggleTheme }: PageProps) => {
   return (
-    <Layout>
+    <Layout theme={theme} onToggleTheme={onToggleTheme}>
       {/* Hero Section */}
       <section className="py-20 lg:py-32 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[128px]" />
