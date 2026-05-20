@@ -86,7 +86,7 @@ export function ServicesSection() {
               className="group"
             >
               <Link to="/services">
-                <div className="h-full p-6 lg:p-8 rounded-2xl bg-gradient-card border border-border/50 card-hover">
+                <div className="h-full p-6 lg:p-8 rounded-2xl themed-surface border border-border/50 card-hover card-animated">
                   {/* Icon */}
                   <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 shadow-button group-hover:shadow-glow transition-all duration-300">
                     <service.icon className="w-7 h-7 text-primary-foreground" />
