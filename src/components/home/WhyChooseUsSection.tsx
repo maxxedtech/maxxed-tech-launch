@@ -84,7 +84,7 @@ export function WhyChooseUsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-6 rounded-2xl bg-gradient-card border border-border/50 card-hover"
+                className="p-6 rounded-2xl themed-surface border border-border/50 card-hover card-animated"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                   <reason.icon className="w-6 h-6 text-primary" />
