@@ -73,7 +73,9 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Controls */}
+          <div className="lg:hidden flex items-center gap-2">
+            <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
@@ -81,6 +83,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -94,6 +97,9 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
               className="lg:hidden overflow-hidden"
             >
               <div className="py-4 space-y-4">
+                <div className="pb-2">
+                  <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+                </div>
                 {navLinks.map((link, index) => (
                   <motion.div
                     key={link.name}
