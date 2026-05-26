@@ -6,14 +6,9 @@ import { HowItWorksSection } from "@/components/home/HowItWorksSection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { CTASection } from "@/components/home/CTASection";
 
-type PageProps = {
-  theme: "light" | "dark";
-  onToggleTheme: () => void;
-};
-
-const Index = ({ theme, onToggleTheme }: PageProps) => {
+const Index = () => {
   return (
-    <Layout theme={theme} onToggleTheme={onToggleTheme}>
+    <Layout>
       <HeroSection />
       <ServicesSection />
       <WhyChooseUsSection />
