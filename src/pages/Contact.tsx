@@ -41,8 +41,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "contact@maxxedtech.com",
-    href: "mailto:contact@maxxedtech.com",
+    value: "davidadamson002@gmail.com",
+    href: "mailto:davidadmson002@gmail.com",
   },
   {
     icon: MapPin,
